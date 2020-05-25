@@ -177,6 +177,7 @@ impl GdbRemote {
                 b's' => self.step(debugger, cpu, args),
                 b'Z' => self.add_breakpoint(debugger, args),
                 b'z' => self.del_breakpoint(debugger, args),
+                b'k' => panic!("Killed"),
                 // Send empty response for unsupported packets
                 _ => self.send_empty_reply(),
             };
